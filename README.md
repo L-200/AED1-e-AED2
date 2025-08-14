@@ -3,5 +3,5 @@ Este repositório servirá como demonstração dos conhecimentos que adquiri em 
 
 AED1: 
 
---O programa na pasta vector compara a diferença de velocidade entre busca binária e busca sequencial. Além disso, ele compara diversos algoritmos de ordenação (como merge sort, quick sort, insertion sort, etc).
+--O programa na pasta vector compara a diferença de velocidade entre busca binária e busca sequencial em um vetor. Além disso, ele compara diversos algoritmos de ordenação (como merge sort, quick sort, insertion sort, etc).
 
