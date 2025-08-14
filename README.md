@@ -1,2 +1,7 @@
 # AED1-e-AED2
-Este repositório servirá como demonstração dos conhecimento que adiquiri em Algoritmos e Estutura de Dados 1 e 2
+Este repositório servirá como demonstração dos conhecimentos que adquiri em Algoritmos e Estutura de Dados 1 e 2.
+
+AED1: 
+
+--O programa na pasta vector compara a diferença de velocidade entre busca binária e busca sequencial. Além disso, ele compara diversos algoritmos de ordenação (como merge sort, quick sort, insertion sort, etc).
+
