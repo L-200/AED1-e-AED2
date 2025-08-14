@@ -6,7 +6,7 @@
 Vector* initialize_v(int tamanho) {
     Vector* vet = (Vector*) malloc(sizeof(Vector));
     vet->tam = tamanho;
-    vet->v = malloc(sizeof(int)*tamanho);
+    vet->v = malloc(sizeof(long)*tamanho);
     return vet;
 }
 
@@ -17,7 +17,7 @@ int get_v(Vector* vet, int i) {
     return vet->v[i];
 }
 
-void set_v(Vector* vet, int i, int value) {
+void set_v(Vector* vet, int i, long value) {
     if(i> vet->tam) {
         error(EXIT_FAILURE, 0, "Index fora dos limites");
     }
@@ -25,7 +25,7 @@ void set_v(Vector* vet, int i, int value) {
 }
 
 void randomize_values_v(Vector* v, int seed, int size) {
-    int j;
+    long j;
     srand(seed);
     for(j = 0; j < size; j++) {
         v->v[j] = (rand() % size / 2) + 1;
@@ -34,15 +34,15 @@ void randomize_values_v(Vector* v, int seed, int size) {
 }
 
 void randomize_values_asc_v(Vector* v, int seed, int size) {
-    int a = 1, j;
+    long a = 1, j;
     srand(seed);
     for(j = 0; j < size; j++) {
-        a = a + (rand() % size / 2) + 1;
+        a = a + (rand() % 10) + 1;
         set_v(v, j, a);
     }
 }
 
-int search_sequencial_v(Vector* vet, int value) {
+int search_sequencial_v(Vector* vet, long value) {
     int i;
     for(i=0 ; i < vet->tam; i++) {
         if(vet->v[i] == value) {
@@ -52,11 +52,11 @@ int search_sequencial_v(Vector* vet, int value) {
     return 0;
 }
 
-int search_binario_v(Vector* vet, int value) {
+int search_binario_v(Vector* vet, long value) {
     int inicio = 0;
     int fim = vet->tam - 1;
     while(inicio <= fim) {
-        int meio = (inicio + fim) /2;
+        int meio = inicio + (fim - inicio) / 2;
         if(vet->v[meio] > value) {
             fim = meio-1;
         }

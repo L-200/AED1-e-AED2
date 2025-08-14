@@ -4,18 +4,18 @@
 
 typedef struct Vector {
     int tam;
-    int* v;
+    long* v;
 } Vector;
 
 Vector* initialize_v(int tam);
 
 int get_v(Vector* v, int i);
 
-void set_v(Vector* v, int i, int value);
+void set_v(Vector* v, int i, long value);
 
-int search_sequencial_v(Vector* v, int i);
+int search_sequencial_v(Vector* v, long i);
 
-int search_binario_v(Vector* v, int i);
+int search_binario_v(Vector* v, long i);
 
 void bubble_sort_v(Vector* v);
 
