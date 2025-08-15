@@ -9,9 +9,13 @@ typedef struct Vector {
 
 Vector* initialize_v(int tam);
 
+void destroy_v(Vector* v);
+
 int get_v(Vector* v, int i);
 
 void set_v(Vector* v, int i, long value);
+
+void show_portion_v(Vector* v, int inicio, int);
 
 int search_sequencial_v(Vector* v, long i);
 

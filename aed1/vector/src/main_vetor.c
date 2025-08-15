@@ -4,6 +4,9 @@
 #include <time.h>
 #include <math.h>
 
+//funções auxiliares para os testes 
+
+
 double calcula_media(double vet[], int quant_testes) {
     double soma_val_testes =  0.0;
     for(int i = 0; i< quant_testes; i++) {
@@ -12,7 +15,6 @@ double calcula_media(double vet[], int quant_testes) {
     return soma_val_testes/quant_testes;
 }
 
-#include <math.h> // Para usar a função sqrt()
 
 double calcula_desvio_padrao(double vet[], int quant_testes, double media) {
     if (quant_testes <= 1) {
@@ -33,42 +35,40 @@ double calcula_desvio_padrao(double vet[], int quant_testes, double media) {
 int main () {
 
     srand(time(NULL));
-    int seed = rand();
+    int seed1 = rand();
     int size = 10000000;
     
     printf("Criando vetor com 10.000.000 de elementos\n");
-    Vector *vetor_testes = initialize_v(size);
+    Vector *vetor_testes_searches = initialize_v(size);
     printf("Populando vetor com números aleatórios em ordem crescente\n");
-    randomize_values_asc_v(vetor_testes, seed, size);
+    randomize_values_asc_v(vetor_testes_searches, seed1, size);
 
     printf("Posições 5.000.000 a 5.000.030  para provar que o vetor realmente é aleatório e em ordem crescente : ");
-    for(int i = 5000000; i< 5000030; i++) {
-        printf("%ld ||", vetor_testes->v[i]);
-    }
+    show_portion_v(vetor_testes_searches, 5000000, 5000030);
     printf("\n");
 
     //escolha dos números que serão buscados nos testes
     int qnt_testes = 30;
-    int vet_testes_buscas[qnt_testes];
+    int vet_testes_searches_procurados[qnt_testes];
     for (int numero_teste = 0; numero_teste < qnt_testes; numero_teste++) {
-        vet_testes_buscas[numero_teste] = vetor_testes->v[rand() % size];
+        vet_testes_searches_procurados[numero_teste] = vetor_testes_searches->v[rand() % size];
     }
 
     printf("\n");
 
     printf("Realizando %d buscas sequenciais por um elemento em uma posição aleatoria\n", qnt_testes);
     printf("Valores que serão buscados:\n");
-    for (int i = 0; i < qnt_testes; i++) {
-        printf("%d |", vet_testes_buscas[i]);
+     for (int i = 0; i < qnt_testes; i++) {
+        printf("%d |", vet_testes_searches_procurados[i]);
     }
-    printf("\n");
+    printf("\n");    
 
     double tempos_search_sequencial[qnt_testes];
 
     for(int i = 0; i < qnt_testes; i++) {
         
         clock_t inicio_ticks = clock();
-        if (search_sequencial_v(vetor_testes, vet_testes_buscas[i])) {
+        if (search_sequencial_v(vetor_testes_searches, vet_testes_searches_procurados[i])) {
             printf("Numero encontrado com sucesso no teste %d!\n", i+1);
         } else {
             printf("ERRO NO TESTE %d!\n", i);
@@ -92,7 +92,7 @@ int main () {
 
     printf("Realizando %d buscas binárias pelas mesmos elementos procurados pelo teste anterior\n", qnt_testes);
     for (int i = 0; i < qnt_testes; i++) {
-        printf("%d ", vet_testes_buscas[i]);
+        printf("%d |", vet_testes_searches_procurados[i]);
     }
     printf("\n");
     
@@ -101,7 +101,7 @@ int main () {
     for(int i = 0; i < qnt_testes; i++) {
         
         clock_t inicio_ticks = clock();
-        if (search_binario_v(vetor_testes, vet_testes_buscas[i])) {
+        if (search_binario_v(vetor_testes_searches, vet_testes_searches_procurados[i])) {
             printf("Numero encontrado com sucesso no teste %d!\n", i+1);
         } else {
             printf("ERRO NO TESTE %d!\n", i);
@@ -119,5 +119,23 @@ int main () {
     desvio_padrao = calcula_desvio_padrao(tempos_search_binario, qnt_testes, media);
     printf("Desvio padrão da busca binária: %f\n", desvio_padrao);
 
+    destroy_v(vetor_testes_searches); //liberar ram usada pelo vetor_testes_searches
 
+    printf("-------------\n");
+    printf("INICIO DOS TESTES DOS SORTS\n");
+    printf("-------------\n");
+
+    //criação das seeds que gerarão os mesmos vetores para o sorting
+    int seed2 = rand();
+    int seed3 = rand();
+    int seed4 = rand();
+    int seed5 = rand();
+    int seed6 = rand();
+    printf("Serão gerados 5 vetores identicos e cada algoritmo resolverá os 5\n");
+
+
+    printf("BUBBLE SORT:\n");
+    Vector *bubble_sort1 = initialize_v(size);
+    printf("Populando o primeiro vetor com 10.000.000 de elementos aleatorios\n");
+    
 }

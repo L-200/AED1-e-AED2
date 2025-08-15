@@ -10,6 +10,13 @@ Vector* initialize_v(int tamanho) {
     return vet;
 }
 
+void destroy_v(Vector* v) {
+    if (v) {
+        free(v->v);
+        free(v);
+    }
+}
+
 int get_v(Vector* vet, int i) {
     if(i> vet->tam) {
         error(EXIT_FAILURE, 0, "Index fora dos limites");
@@ -22,6 +29,12 @@ void set_v(Vector* vet, int i, long value) {
         error(EXIT_FAILURE, 0, "Index fora dos limites");
     }
     vet->v[i] = value;
+}
+
+void show_portion_v(Vector *v, int inicio, int fim) {
+    for (int i = inicio; i < fim; i++) {
+        printf("%ld  |", v->v[i]);
+    }
 }
 
 void randomize_values_v(Vector* v, int seed, int size) {
