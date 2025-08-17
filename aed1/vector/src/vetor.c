@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <error.h>
+#include <time.h>
 
 Vector* initialize_v(int tamanho) {
     Vector* vet = (Vector*) malloc(sizeof(Vector));
@@ -32,18 +33,24 @@ void set_v(Vector* vet, int i, long value) {
 }
 
 void show_portion_v(Vector *v, int inicio, int fim) {
-    for (int i = inicio; i < fim; i++) {
-        printf("%ld  |", v->v[i]);
+    for (int i = inicio; i < fim-1; i++) {
+        printf("%ld | ", v->v[i]);
     }
+    printf("%ld", v->v[fim-1]);
+    printf("\n");
 }
 
 void randomize_values_v(Vector* v, int seed, int size) {
-    long j;
-    srand(seed);
-    for(j = 0; j < size; j++) {
-        v->v[j] = (rand() % size / 2) + 1;
+   srand(seed);
+    for (int i = 0; i < size; i++) {
+        v->v[i] = i + 1;
     }
-
+    for (int i = size - 1; i > 0; i--) {
+        int j = rand() % (i + 1);
+        int tmp = v->v[i];
+        v->v[i] = v->v[j];
+        v->v[j] = tmp;
+    }
 }
 
 void randomize_values_asc_v(Vector* v, int seed, int size) {
@@ -87,7 +94,8 @@ void bubble_sort_v(Vector* vet) {
     if(vet == NULL || vet->tam <= 1) {
         return;
     }
-    int i, j, aux;
+    int i, j;
+    long aux;
     for(i = 0; i < vet->tam - 1; i++) {
         for(j = 0; j < vet->tam - 1 - i; j++) {
             if(vet->v[j] > vet->v[j+1]) {
@@ -139,7 +147,7 @@ void recursive_quick_sort_v(Vector* vet, int inicio, int fim) {
     int i = inicio;
     int j = fim;
     int aux;
-    int pivo = vet->v[(inicio+fim)/2];
+    int pivo = vet->v[inicio + rand() % (fim - inicio + 1)];
     while(i <= j) {
         while ( i <= fim && vet->v[i] < pivo) {i++;}
         while ( j >= inicio && vet->v[j] > pivo) {j--;}
@@ -163,53 +171,43 @@ void quick_sort_v(Vector* vet) {
     recursive_quick_sort_v(vet, 0, fim);
 }
 
-void merge_v(Vector* vet, int inicio, int meio, int fim) {
+void merge_v(Vector* vet, int inicio, int meio, int fim, int* temp) {
     int i = inicio;
     int j = meio+1;
-    int k = 0;
-    int* temp = (int*) malloc(sizeof(int) * (fim - inicio + 1));
+    int k = inicio;
+
     while(i <= meio && j <= fim) {
         if(vet->v[i] <= vet->v[j]) {
-            temp[k] = vet->v[i];
-            k++;
-            i++;
+            temp[k++] = vet->v[i++];
         } else {
-            temp[k] = vet->v[j];
-            k++;
-            j++;
+            temp[k++] = vet->v[j++];
         }
     }
     while(i <= meio) {
-        temp[k] = vet->v[i];
-        k++;
-        i++;
+        temp[k++] = vet->v[i++];
     }
     while(j <= fim) {
-        temp[k] = vet->v[j];
-        k++;
-        j++;
+        temp[k++] = vet->v[j++];
     }
-    k = 0;
+
     for(i = inicio; i <= fim; i++) {
-        vet->v[i] = temp[k];
-        k++;
+        vet->v[i] = temp[i];
     }
-    free(temp);
 }
 
-void recursive_merge_sort_v(Vector* vet, int inicio, int fim) {
-    if (inicio >= fim) {
-        return;
-    }
+void recursive_merge_sort_v(Vector* vet, int inicio, int fim, int* temp) {
+    if (inicio >= fim) return;
+
     int meio = (inicio + fim)/2;
-    recursive_merge_sort_v(vet, inicio, meio);
-    recursive_merge_sort_v(vet, meio+1, fim);
-    merge_v(vet, inicio, meio, fim);
+    recursive_merge_sort_v(vet, inicio, meio, temp);
+    recursive_merge_sort_v(vet, meio+1, fim, temp);
+    merge_v(vet, inicio, meio, fim, temp);
 }
 
 void merge_sort_v(Vector* vet) {
-    if(vet == NULL || vet->tam <= 1) {
-        return;
-    }
-    recursive_merge_sort_v(vet, 0, vet->tam - 1);
+    if(vet == NULL || vet->tam <= 1) return;
+
+    int* temp = (int*) malloc(sizeof(int) * vet->tam);
+    recursive_merge_sort_v(vet, 0, vet->tam - 1, temp);
+    free(temp);
 }

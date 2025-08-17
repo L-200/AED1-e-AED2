@@ -31,11 +31,11 @@ void recursive_quick_sort_v(Vector* vet, int inicio, int fim);
 
 void quick_sort_v(Vector* v);
 
-void merge_v(Vector* vet, int inicio, int meio, int fim);
+void merge_v(Vector* vet, int inicio, int meio, int fim, int* temp);
 
-void recursive_merge_sort_v(Vector* vet, int inicio, int fim);
+void recursive_merge_sort_v(Vector* vet, int inicio, int fim, int* temp);
 
-void merge_sort_v(Vector* v);
+void merge_sort_v(Vector* vet);
 
 void randomize_values_v(Vector* v, int seed, int size);
 
