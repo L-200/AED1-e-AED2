@@ -15,7 +15,13 @@ int get_v(Vector* v, int i);
 
 void set_v(Vector* v, int i, long value);
 
+void randomize_values_v(Vector* v, int seed, int size);
+
+void randomize_values_asc_v(Vector* v, int seed, int size);
+
 void show_portion_v(Vector* v, int inicio, int);
+
+void swap_v(long* a, long* b);
 
 int search_sequencial_v(Vector* v, long i);
 
@@ -27,18 +33,16 @@ void insertion_sort_v(Vector*v);
 
 void selection_sort_v(Vector* v);
 
-void recursive_quick_sort_v(Vector* vet, int inicio, int fim);
+int partition_v(Vector *vet, int low, int high);
 
-void quick_sort_v(Vector* v);
+void recursive_quick_sort_v(Vector *vet, int low, int high);
+
+void quick_sort_v(Vector* vet);
 
 void merge_v(Vector* vet, int inicio, int meio, int fim, int* temp);
 
 void recursive_merge_sort_v(Vector* vet, int inicio, int fim, int* temp);
 
 void merge_sort_v(Vector* vet);
-
-void randomize_values_v(Vector* v, int seed, int size);
-
-void randomize_values_asc_v(Vector* v, int seed, int size);
 
 #endif

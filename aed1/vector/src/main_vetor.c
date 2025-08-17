@@ -188,7 +188,7 @@ int main () {
         printf("Tempo para ordenação: ");
         vet_tempos_insertion[i] = (double)(fim_ticks - inicio_ticks) / CLOCKS_PER_SEC;
         printf("%lf\n", vet_tempos_insertion[i]);
-        destroy_v(vet_bubble_sort);
+        destroy_v(vet_insertion_sort);
 
         printf("\n");
     
@@ -226,7 +226,7 @@ int main () {
 
         printf("Realizando o quick sort\n");
         inicio_ticks = clock();
-        selection_sort_v(vet_quick_sort);
+        quick_sort_v(vet_quick_sort);
         printf("Vetor ordenado com sucesso!\n");
         printf("Amostra do vetor ordenado:\n");
         show_portion_v(vet_quick_sort, inicio_amostra, fim_amostra);
@@ -249,7 +249,7 @@ int main () {
 
         printf("Realizando o merge sort\n");
         inicio_ticks = clock();
-        selection_sort_v(vet_merge_sort);
+        merge_sort_v(vet_merge_sort);
         printf("Vetor ordenado com sucesso!\n");
         printf("Amostra do vetor ordenado:\n");
         show_portion_v(vet_merge_sort, inicio_amostra, fim_amostra);

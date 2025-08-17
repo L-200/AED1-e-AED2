@@ -32,13 +32,6 @@ void set_v(Vector* vet, int i, long value) {
     vet->v[i] = value;
 }
 
-void show_portion_v(Vector *v, int inicio, int fim) {
-    for (int i = inicio; i < fim-1; i++) {
-        printf("%ld | ", v->v[i]);
-    }
-    printf("%ld", v->v[fim-1]);
-    printf("\n");
-}
 
 void randomize_values_v(Vector* v, int seed, int size) {
    srand(seed);
@@ -60,6 +53,20 @@ void randomize_values_asc_v(Vector* v, int seed, int size) {
         a = a + (rand() % 10) + 1;
         set_v(v, j, a);
     }
+}
+
+void show_portion_v(Vector *v, int inicio, int fim) {
+    for (int i = inicio; i < fim-1; i++) {
+        printf("%ld | ", v->v[i]);
+    }
+    printf("%ld", v->v[fim-1]);
+    printf("\n");
+}
+
+void swap_v(long* a, long* b) {
+    long t = *a;
+    *a = *b;
+    *b = t;
 }
 
 int search_sequencial_v(Vector* vet, long value) {
@@ -108,18 +115,15 @@ void bubble_sort_v(Vector* vet) {
 }
 
 void insertion_sort_v(Vector* vet) {
-    if(vet == NULL || vet->tam <= 1) {
-        return;
-    }
-    int i, j, aux;
-    for(i=0; i < vet->tam; i++) {
-        aux = vet->v[i];
-        j = i-1;
-        while (j >= 0 && vet->v[j] > aux) {
-            vet->v[j+1] = vet->v[j];
-            j--;
+    for (int i = 1; i < vet->tam; i++) {
+        int key = vet->v[i];
+        int j = i - 1;
+
+        while (j >= 0 && vet->v[j] > key) {
+            vet->v[j + 1] = vet->v[j];
+            j = j - 1;
         }
-        vet->v[j+1] = aux;
+        vet->v[j + 1] = key;
     }
 }
 
@@ -143,32 +147,34 @@ void selection_sort_v(Vector* vet){
     }
 }
 
-void recursive_quick_sort_v(Vector* vet, int inicio, int fim) {
-    int i = inicio;
-    int j = fim;
-    int aux;
-    int pivo = vet->v[inicio + rand() % (fim - inicio + 1)];
-    while(i <= j) {
-        while ( i <= fim && vet->v[i] < pivo) {i++;}
-        while ( j >= inicio && vet->v[j] > pivo) {j--;}
-        if(i <= j) {
-            aux = vet->v[i];
-            vet->v[i] = vet->v[j];
-            vet->v[j] = aux;
-            i++;
-            j--;
+int partition_v(Vector *vet, int low, int high) {
+    
+    int pivot = vet->v[high];
+    int menor_pivo = low - 1;
+
+    for (int j = low; j <= high - 1; j++) {
+        if (vet->v[j] < pivot) {
+            menor_pivo++;
+            swap_v(&vet->v[menor_pivo], &vet->v[j]);
         }
     }
-    if ( i < fim) {recursive_quick_sort_v(vet, i, fim);}
-    if ( j > inicio) {recursive_quick_sort_v(vet, inicio, j);}
+    
+    swap_v(&vet->v[menor_pivo + 1], &vet->v[high]);  
+    return menor_pivo + 1;
 }
 
-void quick_sort_v(Vector* vet) {
-    if (vet == NULL || vet->tam <= 1) {
-        return;
+void recursive_quick_sort_v(Vector *vet, int low, int high) {
+    if (low < high) {
+        
+        int particao = partition_v(vet, low, high);
+
+        recursive_quick_sort_v(vet, low, particao - 1);
+        recursive_quick_sort_v(vet, particao + 1, high);
     }
-    int fim = vet->tam -1;
-    recursive_quick_sort_v(vet, 0, fim);
+}
+
+void quick_sort_v(Vector *v) {
+    recursive_quick_sort_v(v, 0, v->tam - 1);
 }
 
 void merge_v(Vector* vet, int inicio, int meio, int fim, int* temp) {
