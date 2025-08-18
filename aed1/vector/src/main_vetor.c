@@ -36,7 +36,7 @@ int main () {
 
     srand(time(NULL));
     int seed1 = rand();
-    int size = 300000;
+    int size = 100000;
     int inicio_amostra = size/2;
     int fim_amostra = (size/2)+30;
 
@@ -269,20 +269,40 @@ int main () {
     for (int i = 0; i < qnt_seeds; i++) {
         printf("Teste %d: %f\n", i+1, vet_tempos_bubble[i]);
     }
+    double media_bubble = calcula_media(vet_tempos_bubble, qnt_seeds);
+    printf("Média de tempo do bubble sort: %f\n", media_bubble);
+    printf("Desvio padrão do bubble sort: %f\n", calcula_desvio_padrao(vet_tempos_bubble, qnt_seeds, media_bubble));
+
     printf("Resultados de tempos do insertion sort: \n");
     for (int i = 0; i < qnt_seeds; i++) {
         printf("Teste %d: %f\n", i+1, vet_tempos_insertion[i]);
     }
+    double media_insertion = calcula_media(vet_tempos_insertion, qnt_seeds);
+    printf("Média de tempo do insertion sort: %f\n", media_insertion);
+    printf("Desvio padrão do insertion sort: %f\n", calcula_desvio_padrao(vet_tempos_insertion, qnt_seeds, media_insertion));
+
     printf("Resultados de tempos do selection sort: \n");
     for (int i = 0; i < qnt_seeds; i++) {
         printf("Teste %d: %f\n", i+1, vet_tempos_selection[i]);
     }
+    double media_selection = calcula_media(vet_tempos_selection, qnt_seeds);
+    printf("Média de tempo do selection sort: %f\n", media_selection);
+    printf("Desvio padrão do selection sort: %f\n", calcula_desvio_padrao(vet_tempos_selection, qnt_seeds, media_selection));
+
     printf("Resultados de tempos do quick sort: \n");
     for (int i = 0; i < qnt_seeds; i++) {
         printf("Teste %d: %f\n", i+1, vet_tempos_quick[i]);
     }
+    double media_quick = calcula_media(vet_tempos_quick, qnt_seeds);
+    printf("Média de tempo do quick sort: %f\n", media_quick);
+    printf("Desvio padrão do quick sort: %f\n", calcula_desvio_padrao(vet_tempos_quick, qnt_seeds, media_quick));
+
     printf("Resultados de tempos do merge sort: \n");
     for (int i = 0; i < qnt_seeds; i++) {
         printf("Teste %d: %f\n", i+1, vet_tempos_merge[i]);
     }
+    double media_merge = calcula_media(vet_tempos_merge, qnt_seeds);
+    printf("Média de tempo do selection sort: %f\n", media_merge);
+    printf("Desvio padrão do selection sort: %f\n", calcula_desvio_padrao(vet_tempos_merge, qnt_seeds, media_merge));
+
 }

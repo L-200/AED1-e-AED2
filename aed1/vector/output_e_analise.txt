@@ -1,0 +1,284 @@
+Exemplo de output do programa: 
+Note a quantidade de tempo de cada algoritmo e pense como ele se comportaria em vetores muito maiores
+Todas as medidas de tempo estão em segundos
+Criando vetor com 100000 elementos
+Populando vetor com números aleatórios em ordem crescente
+Posições 50000 a 50030  para provar que o vetor realmente é aleatório e em ordem crescente : 275559 | 275563 | 275569 | 275577 | 275586 | 275589 | 275590 | 275592 | 275594 | 275600 | 275605 | 275608 | 275617 | 275623 | 275629 | 275634 | 275637 | 275643 | 275649 | 275650 | 275656 | 275662 | 275668 | 275674 | 275684 | 275686 | 275692 | 275698 | 275706 | 275712
+
+Realizando 15 buscas sequenciais por um elemento em uma posição aleatoria
+Valores que serão buscados:
+201135 | 220352 | 492519 | 408017 | 231117 | 192378 | 209063 | 56458 | 444612 | 290517 | 59721 | 265251 | 374767 | 441270 | 321126
+Numero encontrado com sucesso no teste 1!
+Numero encontrado com sucesso no teste 2!
+Numero encontrado com sucesso no teste 3!
+Numero encontrado com sucesso no teste 4!
+Numero encontrado com sucesso no teste 5!
+Numero encontrado com sucesso no teste 6!
+Numero encontrado com sucesso no teste 7!
+Numero encontrado com sucesso no teste 8!
+Numero encontrado com sucesso no teste 9!
+Numero encontrado com sucesso no teste 10!
+Numero encontrado com sucesso no teste 11!
+Numero encontrado com sucesso no teste 12!
+Numero encontrado com sucesso no teste 13!
+Numero encontrado com sucesso no teste 14!
+Numero encontrado com sucesso no teste 15!
+Tempos de busca da busca sequencial: 
+Teste 1: 0.000048
+Teste 2: 0.000053
+Teste 3: 0.000116
+Teste 4: 0.000094
+Teste 5: 0.000057
+Teste 6: 0.000045
+Teste 7: 0.000050
+Teste 8: 0.000015
+Teste 9: 0.000115
+Teste 10: 0.000068
+Teste 11: 0.000016
+Teste 12: 0.000062
+Teste 13: 0.000087
+Teste 14: 0.000103
+Teste 15: 0.000075
+Média de tempo da busca sequencial: 0.000067
+Desvio padrão da busca sequencial: 0.000032
+--------------------
+Realizando 15 buscas binárias pelas mesmos elementos procurados pelo teste anterior
+Numero encontrado com sucesso no teste 1!
+Numero encontrado com sucesso no teste 2!
+Numero encontrado com sucesso no teste 3!
+Numero encontrado com sucesso no teste 4!
+Numero encontrado com sucesso no teste 5!
+Numero encontrado com sucesso no teste 6!
+Numero encontrado com sucesso no teste 7!
+Numero encontrado com sucesso no teste 8!
+Numero encontrado com sucesso no teste 9!
+Numero encontrado com sucesso no teste 10!
+Numero encontrado com sucesso no teste 11!
+Numero encontrado com sucesso no teste 12!
+Numero encontrado com sucesso no teste 13!
+Numero encontrado com sucesso no teste 14!
+Numero encontrado com sucesso no teste 15!
+Tempos de busca da busca binária: 
+Teste 1: 0.000002
+Teste 2: 0.000002
+Teste 3: 0.000002
+Teste 4: 0.000002
+Teste 5: 0.000002
+Teste 6: 0.000002
+Teste 7: 0.000001
+Teste 8: 0.000002
+Teste 9: 0.000002
+Teste 10: 0.000002
+Teste 11: 0.000002
+Teste 12: 0.000002
+Teste 13: 0.000002
+Teste 14: 0.000001
+Teste 15: 0.000002
+Média de tempo da busca binária: 0.000002
+Desvio padrão da busca binária: 0.000000
+
+====================
+INICIO DOS TESTES DOS SORTS
+====================
+
+Serão gerados 3 vetores identicos e cada algoritmo resolverá todos eles
+Testes com o vetor 1
+
+BUBBLE SORT:
+Populando o vetor com 100000 elementos aleatorios e únicos
+Amostra de 50000 a 50030:
+8204 | 96177 | 10338 | 84891 | 36845 | 98307 | 88812 | 51635 | 82032 | 50507 | 12316 | 63515 | 88971 | 62074 | 22342 | 18664 | 2 | 43919 | 89634 | 2236 | 50475 | 11686 | 20415 | 19686 | 26927 | 52762 | 22736 | 85402 | 73173 | 28797
+
+Realizando o bubble sort
+Vetor ordenado com sucesso!
+Amostra do vetor ordenado:
+50001 | 50002 | 50003 | 50004 | 50005 | 50006 | 50007 | 50008 | 50009 | 50010 | 50011 | 50012 | 50013 | 50014 | 50015 | 50016 | 50017 | 50018 | 50019 | 50020 | 50021 | 50022 | 50023 | 50024 | 50025 | 50026 | 50027 | 50028 | 50029 | 50030
+Tempo para ordenação: 17.113012
+
+--------------------
+INSERTION SORT:
+Populando o vetor com 100000 elementos aleatorios
+Realizando o insertion sort
+Vetor ordenado com sucesso!
+Amostra do vetor ordenado:
+50001 | 50002 | 50003 | 50004 | 50005 | 50006 | 50007 | 50008 | 50009 | 50010 | 50011 | 50012 | 50013 | 50014 | 50015 | 50016 | 50017 | 50018 | 50019 | 50020 | 50021 | 50022 | 50023 | 50024 | 50025 | 50026 | 50027 | 50028 | 50029 | 50030
+Tempo para ordenação: 2.822989
+
+--------------------
+SELECTION SORT:
+Populando o vetor com 100000 elementos aleatorios
+Realizando o selection sort
+Vetor ordenado com sucesso!
+Amostra do vetor ordenado:
+50001 | 50002 | 50003 | 50004 | 50005 | 50006 | 50007 | 50008 | 50009 | 50010 | 50011 | 50012 | 50013 | 50014 | 50015 | 50016 | 50017 | 50018 | 50019 | 50020 | 50021 | 50022 | 50023 | 50024 | 50025 | 50026 | 50027 | 50028 | 50029 | 50030
+Tempo para ordenação: 4.423361
+
+--------------------
+QUICK SORT:
+Populando o vetor com 100000 elementos aleatorios
+Realizando o quick sort
+Vetor ordenado com sucesso!
+Amostra do vetor ordenado:
+50001 | 50002 | 50003 | 50004 | 50005 | 50006 | 50007 | 50008 | 50009 | 50010 | 50011 | 50012 | 50013 | 50014 | 50015 | 50016 | 50017 | 50018 | 50019 | 50020 | 50021 | 50022 | 50023 | 50024 | 50025 | 50026 | 50027 | 50028 | 50029 | 50030
+Tempo para ordenação: 0.009001
+
+--------------------
+MERGE SORT:
+Populando o vetor com 100000 elementos aleatorios
+Realizando o merge sort
+Vetor ordenado com sucesso!
+Amostra do vetor ordenado:
+50001 | 50002 | 50003 | 50004 | 50005 | 50006 | 50007 | 50008 | 50009 | 50010 | 50011 | 50012 | 50013 | 50014 | 50015 | 50016 | 50017 | 50018 | 50019 | 50020 | 50021 | 50022 | 50023 | 50024 | 50025 | 50026 | 50027 | 50028 | 50029 | 50030
+Tempo para ordenação: 0.013734
+
+FIM DOS TESTES COM O VETOR NUMERO 1
+********************
+
+Testes com o vetor 2
+
+BUBBLE SORT:
+Populando o vetor com 100000 elementos aleatorios e únicos
+Amostra de 50000 a 50030:
+44875 | 99852 | 70895 | 11127 | 60170 | 52141 | 43046 | 40169 | 32249 | 46713 | 71444 | 32754 | 75922 | 85484 | 30488 | 8371 | 78662 | 19787 | 28894 | 22764 | 42674 | 54493 | 69316 | 41165 | 63620 | 43955 | 70308 | 56007 | 45927 | 9900
+
+Realizando o bubble sort
+Vetor ordenado com sucesso!
+Amostra do vetor ordenado:
+50001 | 50002 | 50003 | 50004 | 50005 | 50006 | 50007 | 50008 | 50009 | 50010 | 50011 | 50012 | 50013 | 50014 | 50015 | 50016 | 50017 | 50018 | 50019 | 50020 | 50021 | 50022 | 50023 | 50024 | 50025 | 50026 | 50027 | 50028 | 50029 | 50030
+Tempo para ordenação: 17.039331
+
+--------------------
+INSERTION SORT:
+Populando o vetor com 100000 elementos aleatorios
+Realizando o insertion sort
+Vetor ordenado com sucesso!
+Amostra do vetor ordenado:
+50001 | 50002 | 50003 | 50004 | 50005 | 50006 | 50007 | 50008 | 50009 | 50010 | 50011 | 50012 | 50013 | 50014 | 50015 | 50016 | 50017 | 50018 | 50019 | 50020 | 50021 | 50022 | 50023 | 50024 | 50025 | 50026 | 50027 | 50028 | 50029 | 50030
+Tempo para ordenação: 2.820621
+
+--------------------
+SELECTION SORT:
+Populando o vetor com 100000 elementos aleatorios
+Realizando o selection sort
+Vetor ordenado com sucesso!
+Amostra do vetor ordenado:
+50001 | 50002 | 50003 | 50004 | 50005 | 50006 | 50007 | 50008 | 50009 | 50010 | 50011 | 50012 | 50013 | 50014 | 50015 | 50016 | 50017 | 50018 | 50019 | 50020 | 50021 | 50022 | 50023 | 50024 | 50025 | 50026 | 50027 | 50028 | 50029 | 50030
+Tempo para ordenação: 4.412349
+
+--------------------
+QUICK SORT:
+Populando o vetor com 100000 elementos aleatorios
+Realizando o quick sort
+Vetor ordenado com sucesso!
+Amostra do vetor ordenado:
+50001 | 50002 | 50003 | 50004 | 50005 | 50006 | 50007 | 50008 | 50009 | 50010 | 50011 | 50012 | 50013 | 50014 | 50015 | 50016 | 50017 | 50018 | 50019 | 50020 | 50021 | 50022 | 50023 | 50024 | 50025 | 50026 | 50027 | 50028 | 50029 | 50030
+Tempo para ordenação: 0.008347
+
+--------------------
+MERGE SORT:
+Populando o vetor com 100000 elementos aleatorios
+Realizando o merge sort
+Vetor ordenado com sucesso!
+Amostra do vetor ordenado:
+50001 | 50002 | 50003 | 50004 | 50005 | 50006 | 50007 | 50008 | 50009 | 50010 | 50011 | 50012 | 50013 | 50014 | 50015 | 50016 | 50017 | 50018 | 50019 | 50020 | 50021 | 50022 | 50023 | 50024 | 50025 | 50026 | 50027 | 50028 | 50029 | 50030
+Tempo para ordenação: 0.012575
+
+FIM DOS TESTES COM O VETOR NUMERO 2
+********************
+
+Testes com o vetor 3
+
+BUBBLE SORT:
+Populando o vetor com 100000 elementos aleatorios e únicos
+Amostra de 50000 a 50030:
+27642 | 4838 | 22877 | 54046 | 50902 | 80258 | 39374 | 52656 | 1007 | 46020 | 59784 | 91654 | 43947 | 33882 | 29992 | 2525 | 83162 | 83997 | 82722 | 3564 | 6146 | 96351 | 69054 | 97244 | 90052 | 14230 | 70152 | 34756 | 38954 | 1589
+
+Realizando o bubble sort
+Vetor ordenado com sucesso!
+Amostra do vetor ordenado:
+50001 | 50002 | 50003 | 50004 | 50005 | 50006 | 50007 | 50008 | 50009 | 50010 | 50011 | 50012 | 50013 | 50014 | 50015 | 50016 | 50017 | 50018 | 50019 | 50020 | 50021 | 50022 | 50023 | 50024 | 50025 | 50026 | 50027 | 50028 | 50029 | 50030
+Tempo para ordenação: 17.153558
+
+--------------------
+INSERTION SORT:
+Populando o vetor com 100000 elementos aleatorios
+Realizando o insertion sort
+Vetor ordenado com sucesso!
+Amostra do vetor ordenado:
+50001 | 50002 | 50003 | 50004 | 50005 | 50006 | 50007 | 50008 | 50009 | 50010 | 50011 | 50012 | 50013 | 50014 | 50015 | 50016 | 50017 | 50018 | 50019 | 50020 | 50021 | 50022 | 50023 | 50024 | 50025 | 50026 | 50027 | 50028 | 50029 | 50030
+Tempo para ordenação: 2.841942
+
+--------------------
+SELECTION SORT:
+Populando o vetor com 100000 elementos aleatorios
+Realizando o selection sort
+Vetor ordenado com sucesso!
+Amostra do vetor ordenado:
+50001 | 50002 | 50003 | 50004 | 50005 | 50006 | 50007 | 50008 | 50009 | 50010 | 50011 | 50012 | 50013 | 50014 | 50015 | 50016 | 50017 | 50018 | 50019 | 50020 | 50021 | 50022 | 50023 | 50024 | 50025 | 50026 | 50027 | 50028 | 50029 | 50030
+Tempo para ordenação: 4.396644
+
+--------------------
+QUICK SORT:
+Populando o vetor com 100000 elementos aleatorios
+Realizando o quick sort
+Vetor ordenado com sucesso!
+Amostra do vetor ordenado:
+50001 | 50002 | 50003 | 50004 | 50005 | 50006 | 50007 | 50008 | 50009 | 50010 | 50011 | 50012 | 50013 | 50014 | 50015 | 50016 | 50017 | 50018 | 50019 | 50020 | 50021 | 50022 | 50023 | 50024 | 50025 | 50026 | 50027 | 50028 | 50029 | 50030
+Tempo para ordenação: 0.008338
+
+--------------------
+MERGE SORT:
+Populando o vetor com 100000 elementos aleatorios
+Realizando o merge sort
+Vetor ordenado com sucesso!
+Amostra do vetor ordenado:
+50001 | 50002 | 50003 | 50004 | 50005 | 50006 | 50007 | 50008 | 50009 | 50010 | 50011 | 50012 | 50013 | 50014 | 50015 | 50016 | 50017 | 50018 | 50019 | 50020 | 50021 | 50022 | 50023 | 50024 | 50025 | 50026 | 50027 | 50028 | 50029 | 50030
+Tempo para ordenação: 0.012218
+
+FIM DOS TESTES COM O VETOR NUMERO 3
+********************
+
+Resultados de tempos do bubble sort: 
+Teste 1: 17.113012
+Teste 2: 17.039331
+Teste 3: 17.153558
+Média de tempo do bubble sort: 17.101967
+Desvio padrão do bubble sort: 0.057909
+Resultados de tempos do insertion sort: 
+Teste 1: 2.822989
+Teste 2: 2.820621
+Teste 3: 2.841942
+Média de tempo do insertion sort: 2.828517
+Desvio padrão do insertion sort: 0.011686
+Resultados de tempos do selection sort: 
+Teste 1: 4.423361
+Teste 2: 4.412349
+Teste 3: 4.396644
+Média de tempo do selection sort: 4.410785
+Desvio padrão do selection sort: 0.013427
+Resultados de tempos do quick sort: 
+Teste 1: 0.009001
+Teste 2: 0.008347
+Teste 3: 0.008338
+Média de tempo do quick sort: 0.008562
+Desvio padrão do quick sort: 0.000380
+Resultados de tempos do merge sort: 
+Teste 1: 0.013734
+Teste 2: 0.012575
+Teste 3: 0.012218
+Média de tempo do selection sort: 0.012842
+Desvio padrão do selection sort: 0.000793
+
+
+ANÁLISE: 
+
+Algoritmos de busca: 
+--Busca sequencial: rápida, porém cresce linearmente junto com o número de elementos do vetor. Além disso, apresenta um desvio padrão maior do que a busca binária, já que a posição do elemento procurado afeta muito mais a quantidade de tempo que o algoritmo demorará para chegar nele.
+--Busca binária: ainda mais rápida que a busca sequencial e cresce em O(log n), tornando-a na melhor maneira de procurar um elemento em um vetor ordenado. E como se isso já não bastasse, o desvio padrão chega a ser insignificante, já que a mudança de posição do elemento procurado não adiciona tantos passos a mais no algoritmo.
+
+Algoritmos de ordenação: 
+--Bubble sort: Disparado o pior de todos. Apesar de ter a mesma complexidade de tempo de Insertion e Selection sort (O(n²)), a sua quantidade de trocas excessivas faz com que ele seja ridiculamente mais lento que os outros 2.
+--Insertion e Selection sort: apesar de não serem os mais rápidos nos testes feitos, ainda têm seus casos de uso. O Insertion sort se comporta extremamente bem vetores pequenos e quase organizados, tanto que é muitas vezes usado como um algoritmo auxiliar no Merge sort e Quick sort quando esses já dividiram o vetor em partes muito pequenas. Já o selection sort é utilizado quando necessita-se usar um número muito pequeno de trocas.
+--Merge e Quick sort: A complexidade de tempo O(nlogn) faz com que sejam os algoritmos mais eficientes para ordenação, além disso o desvio padrão baixo comprova que não só são rápidos, como também são consistentes.
+
+
