@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "vetor.h"
-#include <time.h>
-#include <math.h>
+#include "main_vetor.h"
 
 //funções auxiliares para os testes 
 
