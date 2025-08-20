@@ -1,33 +1,5 @@
 #include "main_vetor.h"
 
-//funções auxiliares para os testes 
-
-
-double calcula_media(double vet[], int quant_testes) {
-    double soma_val_testes =  0.0;
-    for(int i = 0; i< quant_testes; i++) {
-        soma_val_testes += vet[i];
-    }
-    return soma_val_testes/quant_testes;
-}
-
-
-double calcula_desvio_padrao(double vet[], int quant_testes, double media) {
-    if (quant_testes <= 1) {
-        return 0.0;
-    }
-
-    double soma_quadrados_diferencas = 0.0;
-    for (int i = 0; i < quant_testes; i++) {
-        double diff = vet[i] - media;
-        soma_quadrados_diferencas += diff * diff;
-    }
-
-    double variancia = soma_quadrados_diferencas / (quant_testes - 1);
-
-    return sqrt(variancia);
-}
-
 int main () {
 
     srand(time(NULL));
@@ -63,7 +35,7 @@ int main () {
     }
     printf("%d\n", vet_testes_searches_procurados[qnt_testes-1]);    
 
-    double tempos_search_sequencial[qnt_testes];
+    dados_estatisticos* tempos_search_sequencial = cria_dados_estatisticos_e(qnt_testes);
 
     for(int i = 0; i < qnt_testes; i++) {
         
@@ -74,25 +46,20 @@ int main () {
             printf("ERRO NO TESTE %d!\n", i);
         }
         clock_t fim_ticks = clock();
-        tempos_search_sequencial[i] = (double)(fim_ticks - inicio_ticks) / CLOCKS_PER_SEC;
+        insere_dado_e(tempos_search_sequencial, (double)(fim_ticks - inicio_ticks) / CLOCKS_PER_SEC);
     } 
 
     printf("Tempos de busca da busca sequencial: \n");
     for (int i = 0; i < qnt_testes; i++) {
-        printf("Teste %d: %f\n", i+1, tempos_search_sequencial[i]);
+        printf("Teste %d: %f\n", i+1, tempos_search_sequencial->valores[i]);
     }
-    double media = calcula_media(tempos_search_sequencial, qnt_testes);
-    printf("Média de tempo da busca sequencial: %f\n", media);
-    double desvio_padrao = calcula_desvio_padrao(tempos_search_sequencial, qnt_testes, media);
-    printf("Desvio padrão da busca sequencial: %f\n", desvio_padrao);
-
 
     printf("--------------------\n");
 
 
     printf("Realizando %d buscas binárias pelas mesmos elementos procurados pelo teste anterior\n", qnt_testes);
     
-    double tempos_search_binario[qnt_testes];
+    dados_estatisticos* tempos_search_binario = cria_dados_estatisticos_e(qnt_testes);
 
     for(int i = 0; i < qnt_testes; i++) {
         
@@ -103,18 +70,19 @@ int main () {
             printf("ERRO NO TESTE %d!\n", i);
         }
         clock_t fim_ticks = clock();
-        tempos_search_binario[i] = (double)(fim_ticks - inicio_ticks) / CLOCKS_PER_SEC;
+        insere_dado_e(tempos_search_binario, (double)(fim_ticks - inicio_ticks) / CLOCKS_PER_SEC);
     } 
 
     printf("Tempos de busca da busca binária: \n");
     for (int i = 0; i < qnt_testes; i++) {
-        printf("Teste %d: %f\n", i+1, tempos_search_binario[i]);
+        printf("Teste %d: %f\n", i+1, tempos_search_binario->valores[i]);
     }
-    media = calcula_media(tempos_search_binario, qnt_testes);
-    printf("Média de tempo da busca binária: %f\n", media);
-    desvio_padrao = calcula_desvio_padrao(tempos_search_binario, qnt_testes, media);
-    printf("Desvio padrão da busca binária: %f\n", desvio_padrao);
 
+    printf("Média de tempo da busca sequencial: %f\n", calcula_media_e(tempos_search_sequencial));
+    printf("Desvio padrão da busca sequencial: %f\n", calcula_desvio_padrao_e(tempos_search_sequencial));
+    printf("\n");
+    printf("Média de tempo da busca binária: %f\n", calcula_media_e(tempos_search_binario));
+    printf("Desvio padrão da busca binária: %f\n", calcula_desvio_padrao_e(tempos_search_binario));
     destroy_v(vetor_testes_searches); //liberar ram usada pelo vetor_testes_searches
 
     printf("\n");
@@ -132,11 +100,11 @@ int main () {
     }
 
     printf("Serão gerados %d vetores identicos e cada algoritmo resolverá todos eles\n", qnt_seeds);
-    double vet_tempos_bubble[qnt_seeds];
-    double vet_tempos_insertion[qnt_seeds];
-    double vet_tempos_selection[qnt_seeds];
-    double vet_tempos_quick[qnt_seeds];
-    double vet_tempos_merge[qnt_seeds];
+    dados_estatisticos* tempos_bubble = cria_dados_estatisticos_e(qnt_seeds);
+    dados_estatisticos* tempos_insertion = cria_dados_estatisticos_e(qnt_seeds);
+    dados_estatisticos* tempos_selection = cria_dados_estatisticos_e(qnt_seeds);
+    dados_estatisticos* tempos_quick = cria_dados_estatisticos_e(qnt_seeds);
+    dados_estatisticos* tempos_merge = cria_dados_estatisticos_e(qnt_seeds);
 
     //inicio dos testes
     for (int i = 0; i < qnt_seeds; i++) {
@@ -159,8 +127,8 @@ int main () {
         show_portion_v(vet_bubble_sort, inicio_amostra, fim_amostra);
         clock_t fim_ticks = clock();
         printf("Tempo para ordenação: ");
-        vet_tempos_bubble[i] = (double)(fim_ticks - inicio_ticks) / CLOCKS_PER_SEC;
-        printf("%lf\n", vet_tempos_bubble[i]);
+        insere_dado_e(tempos_bubble, (double)(fim_ticks - inicio_ticks) / CLOCKS_PER_SEC);
+        printf("%lf\n", tempos_bubble->valores[i]);
         destroy_v(vet_bubble_sort);
 
         printf("\n");
@@ -182,8 +150,8 @@ int main () {
         show_portion_v(vet_insertion_sort, inicio_amostra, fim_amostra);
         fim_ticks = clock();
         printf("Tempo para ordenação: ");
-        vet_tempos_insertion[i] = (double)(fim_ticks - inicio_ticks) / CLOCKS_PER_SEC;
-        printf("%lf\n", vet_tempos_insertion[i]);
+        insere_dado_e(tempos_insertion, (double)(fim_ticks - inicio_ticks) / CLOCKS_PER_SEC);
+        printf("%lf\n", tempos_insertion->valores[i]);
         destroy_v(vet_insertion_sort);
 
         printf("\n");
@@ -205,8 +173,8 @@ int main () {
         show_portion_v(vet_selection_sort, inicio_amostra, fim_amostra);
         fim_ticks = clock();
         printf("Tempo para ordenação: ");
-        vet_tempos_selection[i] = (double)(fim_ticks - inicio_ticks) / CLOCKS_PER_SEC;
-        printf("%lf\n", vet_tempos_selection[i]);
+        insere_dado_e(tempos_selection, (double)(fim_ticks - inicio_ticks) / CLOCKS_PER_SEC);
+        printf("%lf\n", tempos_selection->valores[i]);
         destroy_v(vet_selection_sort);
 
         printf("\n");
@@ -228,8 +196,8 @@ int main () {
         show_portion_v(vet_quick_sort, inicio_amostra, fim_amostra);
         fim_ticks = clock();
         printf("Tempo para ordenação: ");
-        vet_tempos_quick[i] = (double)(fim_ticks - inicio_ticks) / CLOCKS_PER_SEC;
-        printf("%lf\n", vet_tempos_quick[i]);
+        insere_dado_e(tempos_quick, (double)(fim_ticks - inicio_ticks) / CLOCKS_PER_SEC);
+        printf("%lf\n", tempos_quick->valores[i]);
         destroy_v(vet_quick_sort);
 
         printf("\n");
@@ -251,8 +219,8 @@ int main () {
         show_portion_v(vet_merge_sort, inicio_amostra, fim_amostra);
         fim_ticks = clock();
         printf("Tempo para ordenação: ");
-        vet_tempos_merge[i] = (double)(fim_ticks - inicio_ticks) / CLOCKS_PER_SEC;
-        printf("%lf\n", vet_tempos_merge[i]);
+        insere_dado_e(tempos_merge, (double)(fim_ticks - inicio_ticks) / CLOCKS_PER_SEC);
+        printf("%lf\n", tempos_merge->valores[i]);
         destroy_v(vet_merge_sort);
 
         printf("\n");
@@ -263,42 +231,41 @@ int main () {
 
     printf("Resultados de tempos do bubble sort: \n");
     for (int i = 0; i < qnt_seeds; i++) {
-        printf("Teste %d: %f\n", i+1, vet_tempos_bubble[i]);
+        printf("Teste %d: %f\n", i+1, tempos_bubble->valores[i]);
     }
-    double media_bubble = calcula_media(vet_tempos_bubble, qnt_seeds);
-    printf("Média de tempo do bubble sort: %f\n", media_bubble);
-    printf("Desvio padrão do bubble sort: %f\n", calcula_desvio_padrao(vet_tempos_bubble, qnt_seeds, media_bubble));
+    printf("Média de tempo do bubble sort: %f\n", calcula_media_e(tempos_bubble));
+    printf("Desvio padrão do bubble sort: %f\n", calcula_desvio_padrao_e(tempos_bubble));
+
 
     printf("Resultados de tempos do insertion sort: \n");
     for (int i = 0; i < qnt_seeds; i++) {
-        printf("Teste %d: %f\n", i+1, vet_tempos_insertion[i]);
+        printf("Teste %d: %f\n", i+1, tempos_insertion->valores[i]);
     }
-    double media_insertion = calcula_media(vet_tempos_insertion, qnt_seeds);
-    printf("Média de tempo do insertion sort: %f\n", media_insertion);
-    printf("Desvio padrão do insertion sort: %f\n", calcula_desvio_padrao(vet_tempos_insertion, qnt_seeds, media_insertion));
+    printf("Média de tempo do insertion sort: %f\n", calcula_media_e(tempos_insertion));
+    printf("Desvio padrão do insertion sort: %f\n", calcula_desvio_padrao_e(tempos_insertion));
+
 
     printf("Resultados de tempos do selection sort: \n");
     for (int i = 0; i < qnt_seeds; i++) {
-        printf("Teste %d: %f\n", i+1, vet_tempos_selection[i]);
+        printf("Teste %d: %f\n", i+1, tempos_selection->valores[i]);
     }
-    double media_selection = calcula_media(vet_tempos_selection, qnt_seeds);
-    printf("Média de tempo do selection sort: %f\n", media_selection);
-    printf("Desvio padrão do selection sort: %f\n", calcula_desvio_padrao(vet_tempos_selection, qnt_seeds, media_selection));
+    printf("Média de tempo do selection sort: %f\n", calcula_media_e(tempos_selection));
+    printf("Desvio padrão do selection sort: %f\n", calcula_desvio_padrao_e(tempos_selection));
+
 
     printf("Resultados de tempos do quick sort: \n");
     for (int i = 0; i < qnt_seeds; i++) {
-        printf("Teste %d: %f\n", i+1, vet_tempos_quick[i]);
+        printf("Teste %d: %f\n", i+1, tempos_quick->valores[i]);
     }
-    double media_quick = calcula_media(vet_tempos_quick, qnt_seeds);
-    printf("Média de tempo do quick sort: %f\n", media_quick);
-    printf("Desvio padrão do quick sort: %f\n", calcula_desvio_padrao(vet_tempos_quick, qnt_seeds, media_quick));
+    printf("Média de tempo do quick sort: %f\n", calcula_media_e(tempos_quick));
+    printf("Desvio padrão do quick sort: %f\n", calcula_desvio_padrao_e(tempos_quick));
+
 
     printf("Resultados de tempos do merge sort: \n");
     for (int i = 0; i < qnt_seeds; i++) {
-        printf("Teste %d: %f\n", i+1, vet_tempos_merge[i]);
+        printf("Teste %d: %f\n", i+1, tempos_merge->valores[i]);
     }
-    double media_merge = calcula_media(vet_tempos_merge, qnt_seeds);
-    printf("Média de tempo do selection sort: %f\n", media_merge);
-    printf("Desvio padrão do selection sort: %f\n", calcula_desvio_padrao(vet_tempos_merge, qnt_seeds, media_merge));
+    printf("Média de tempo do selection sort: %f\n", calcula_media_e(tempos_merge));
+    printf("Desvio padrão do selection sort: %f\n", calcula_desvio_padrao_e(tempos_merge));
 
 }

@@ -6,8 +6,8 @@
 #include "vetor.h"
 #include <time.h>
 #include <math.h>
-#include "dados_estatisticos.h"
+#include "lista.h"
 
-int main();
+int main ();
 
 #endif // MAIN_H

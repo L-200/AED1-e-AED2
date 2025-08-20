@@ -37,6 +37,13 @@ void append_values_l(Int_Linked_List* l, int n, int values[]) {
     }
 }
 
+void append_values_reverse_l(Int_Linked_List* l, int n, int values[]) {
+    int j;
+    for(j = n - 1; j >= 0; j--) {
+        append_l(l, values[j]);
+    }
+}
+
 void randomize_values_l(Int_Linked_List* l, int seed, int size) {
     int j;
     srand(seed);
