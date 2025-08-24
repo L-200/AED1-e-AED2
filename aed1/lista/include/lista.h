@@ -1,5 +1,4 @@
 #ifndef LISTAHEADER_H
-
 #define LISTAHEADER_H
 
 typedef struct Node {
@@ -20,6 +19,9 @@ void append_l(Int_Linked_List* l, int value);
 /* Adiciona elementos ao final da lista encadeada */
 void append_values_l(Int_Linked_List* l, int n, int values[]);
 
+/*Adiciona elementos na ordem inversa do vetor dado*/
+void append_values_reverse_l(Int_Linked_List* l, int n, long values[]);
+
 /* Randomiza valores em uma lista de forma aleatória */
 void randomize_values_l(Int_Linked_List* l, int seed, int size);
 
@@ -37,8 +39,6 @@ void set_l(Int_Linked_List* l, int i, int value);
 
 /* Remove último elemento da lista e retorna */
 int pop_l(Int_Linked_List* l);
-
-char* toString_l(Int_Linked_List* l); 
 
 int search_sequencial_l(Int_Linked_List* l, int value);
 

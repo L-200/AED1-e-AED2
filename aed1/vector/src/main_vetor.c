@@ -35,7 +35,7 @@ int main () {
     }
     printf("%d\n", vet_testes_searches_procurados[qnt_testes-1]);    
 
-    dados_estatisticos* tempos_search_sequencial = cria_dados_estatisticos_e(qnt_testes);
+    dados_estatisticos* tempos_search_sequencial = initialize_dados_estatisticos_e(qnt_testes);
 
     for(int i = 0; i < qnt_testes; i++) {
         
@@ -59,7 +59,7 @@ int main () {
 
     printf("Realizando %d buscas binárias pelas mesmos elementos procurados pelo teste anterior\n", qnt_testes);
     
-    dados_estatisticos* tempos_search_binario = cria_dados_estatisticos_e(qnt_testes);
+    dados_estatisticos* tempos_search_binario = initialize_dados_estatisticos_e(qnt_testes);
 
     for(int i = 0; i < qnt_testes; i++) {
         
@@ -100,11 +100,11 @@ int main () {
     }
 
     printf("Serão gerados %d vetores identicos e cada algoritmo resolverá todos eles\n", qnt_seeds);
-    dados_estatisticos* tempos_bubble = cria_dados_estatisticos_e(qnt_seeds);
-    dados_estatisticos* tempos_insertion = cria_dados_estatisticos_e(qnt_seeds);
-    dados_estatisticos* tempos_selection = cria_dados_estatisticos_e(qnt_seeds);
-    dados_estatisticos* tempos_quick = cria_dados_estatisticos_e(qnt_seeds);
-    dados_estatisticos* tempos_merge = cria_dados_estatisticos_e(qnt_seeds);
+    dados_estatisticos* tempos_bubble = initialize_dados_estatisticos_e(qnt_seeds);
+    dados_estatisticos* tempos_insertion = initialize_dados_estatisticos_e(qnt_seeds);
+    dados_estatisticos* tempos_selection = initialize_dados_estatisticos_e(qnt_seeds);
+    dados_estatisticos* tempos_quick = initialize_dados_estatisticos_e(qnt_seeds);
+    dados_estatisticos* tempos_merge = initialize_dados_estatisticos_e(qnt_seeds);
 
     //inicio dos testes
     for (int i = 0; i < qnt_seeds; i++) {

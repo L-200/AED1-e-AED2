@@ -37,7 +37,7 @@ void append_values_l(Int_Linked_List* l, int n, int values[]) {
     }
 }
 
-void append_values_reverse_l(Int_Linked_List* l, int n, int values[]) {
+void append_values_reverse_l(Int_Linked_List* l, int n, long values[]) {
     int j;
     for(j = n - 1; j >= 0; j--) {
         append_l(l, values[j]);
@@ -73,6 +73,7 @@ int get_l(Int_Linked_List* l, int i) {
     }
 
     error(EXIT_FAILURE, 0, "Index fora dos limites");
+    return -1;
 }
 
 int get_size_l(Int_Linked_List* l) {
@@ -81,7 +82,7 @@ int get_size_l(Int_Linked_List* l) {
     }
     Node* n = l->prim;
     int i = 1;
-    for(i; n->prox != NULL;i++) {
+    for(;n->prox != NULL;i++) {
         n = n->prox;
     }
     return i;
@@ -126,24 +127,8 @@ int pop_l(Int_Linked_List* l) {
     return value;
 }
 
-char* toString_l(Int_Linked_List* l) {
-    Node* n;
-    static char ans[MAX_STRING_SIZE];
-
-    sprintf(ans, "[");
-
-    for(n = l->prim; n->prox != NULL; n = n->prox) {
-        sprintf(ans, "%s%d, ", ans, n->value);
-    }
-
-    sprintf(ans, "%s%d]", ans, n->value);
-
-    return ans;
-}
-
 int search_sequencial_l(Int_Linked_List* l, int value) {
     Node* n;
-    int i;
     for(n = l->prim; n != NULL; n = n->prox) {
         if (n->value == value) {
             return 1;

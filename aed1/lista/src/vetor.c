@@ -11,6 +11,13 @@ Vector* initialize_v(int tamanho) {
     return vet;
 }
 
+void copy_v(Vector* antigo, Vector* novo) {
+    
+    for(int i = 0; i < antigo->tam; i++) {
+        novo->v[i] = antigo->v[i];
+    }
+}
+
 void destroy_v(Vector* v) {
     if (v) {
         free(v->v);

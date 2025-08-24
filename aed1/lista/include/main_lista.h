@@ -7,6 +7,7 @@
 #include <time.h>
 #include <math.h>
 #include "lista.h"
+#include "dados_estatisticos.h"
 
 int main ();
 

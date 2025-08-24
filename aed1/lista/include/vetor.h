@@ -1,5 +1,4 @@
 #ifndef VETORHEADER_H
-
 #define VETORHEADER_H
 
 typedef struct Vector {
@@ -8,6 +7,8 @@ typedef struct Vector {
 } Vector;
 
 Vector* initialize_v(int tam);
+
+void copy_v(Vector* antigo, Vector* novo);
 
 void destroy_v(Vector* v);
 
@@ -45,4 +46,4 @@ void recursive_merge_sort_v(Vector* vet, int inicio, int fim, int* temp);
 
 void merge_sort_v(Vector* vet);
 
-#endif
+#endif // VETORHEADER_H
