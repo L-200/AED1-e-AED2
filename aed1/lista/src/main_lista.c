@@ -34,7 +34,6 @@ int main () {
         printf("Lista criada\n");
         insere_dado_e(tempos_criacao_lista, (double)(fim_ticks - inicio_ticks) / CLOCKS_PER_SEC);
         printf("Tempo para criação: %lf\n", tempos_criacao_lista->valores[i]);
-
         printf("Criando novo vetor para comparação\n");
         inicio_ticks = clock();
         Vector *vet_novo = initialize_v(size_testes);
