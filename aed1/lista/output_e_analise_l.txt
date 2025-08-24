@@ -1,0 +1,197 @@
+Exemplo de output do prograna: 
+Tempo em segundos
+=====================================
+Teste 1
+Criando vetor que será copiado para popular a lista e um novo vetor
+TESTES DE CRIAÇÃO
+Criando a lista
+Lista criada
+Tempo para criação: 6.061225
+Criando novo vetor para comparação
+Vetor criado
+Tempo para criação: 0.000320
+===============================
+TESTES DE BUSCA
+Procurando o valor 68506 na lista
+Valor encontrado na lista
+Tempo para busca na lista: 0.000133
+Procurando o valor 68506 no vetor
+Valor encontrado no vetor
+Tempo para busca no vetor: 0.000008
+===============================
+TESTES DE LIBERAÇÃO DE MEMÓRIA
+Memória da lista liberada
+Tempo para liberação da lista: 6.552938
+Liberando a memória do vetor
+Memória do vetor liberada
+Tempo para liberação do vetor: 0.000137
+=====================================
+Teste 2
+Criando vetor que será copiado para popular a lista e um novo vetor
+TESTES DE CRIAÇÃO
+Criando a lista
+Lista criada
+Tempo para criação: 5.430396
+Criando novo vetor para comparação
+Vetor criado
+Tempo para criação: 0.000282
+===============================
+TESTES DE BUSCA
+Procurando o valor 11597 na lista
+Valor encontrado na lista
+Tempo para busca na lista: 0.000040
+Procurando o valor 11597 no vetor
+Valor encontrado no vetor
+Tempo para busca no vetor: 0.000048
+===============================
+TESTES DE LIBERAÇÃO DE MEMÓRIA
+Memória da lista liberada
+Tempo para liberação da lista: 6.482636
+Liberando a memória do vetor
+Memória do vetor liberada
+Tempo para liberação do vetor: 0.000473
+=====================================
+Teste 3
+Criando vetor que será copiado para popular a lista e um novo vetor
+TESTES DE CRIAÇÃO
+Criando a lista
+Lista criada
+Tempo para criação: 5.425688
+Criando novo vetor para comparação
+Vetor criado
+Tempo para criação: 0.000096
+===============================
+TESTES DE BUSCA
+Procurando o valor 22974 na lista
+Valor encontrado na lista
+Tempo para busca na lista: 0.000131
+Procurando o valor 22974 no vetor
+Valor encontrado no vetor
+Tempo para busca no vetor: 0.000001
+===============================
+TESTES DE LIBERAÇÃO DE MEMÓRIA
+Memória da lista liberada
+Tempo para liberação da lista: 6.479567
+Liberando a memória do vetor
+Memória do vetor liberada
+Tempo para liberação do vetor: 0.000413
+=====================================
+Teste 4
+Criando vetor que será copiado para popular a lista e um novo vetor
+TESTES DE CRIAÇÃO
+Criando a lista
+Lista criada
+Tempo para criação: 5.479343
+Criando novo vetor para comparação
+Vetor criado
+Tempo para criação: 0.000100
+===============================
+TESTES DE BUSCA
+Procurando o valor 71691 na lista
+Valor encontrado na lista
+Tempo para busca na lista: 0.000047
+Procurando o valor 71691 no vetor
+Valor encontrado no vetor
+Tempo para busca no vetor: 0.000047
+===============================
+TESTES DE LIBERAÇÃO DE MEMÓRIA
+Memória da lista liberada
+Tempo para liberação da lista: 6.750802
+Liberando a memória do vetor
+Memória do vetor liberada
+Tempo para liberação do vetor: 0.000404
+=====================================
+Teste 5
+Criando vetor que será copiado para popular a lista e um novo vetor
+TESTES DE CRIAÇÃO
+Criando a lista
+Lista criada
+Tempo para criação: 5.656051
+Criando novo vetor para comparação
+Vetor criado
+Tempo para criação: 0.000101
+===============================
+TESTES DE BUSCA
+Procurando o valor 79845 na lista
+Valor encontrado na lista
+Tempo para busca na lista: 0.000113
+Procurando o valor 79845 no vetor
+Valor encontrado no vetor
+Tempo para busca no vetor: 0.000021
+===============================
+TESTES DE LIBERAÇÃO DE MEMÓRIA
+Memória da lista liberada
+Tempo para liberação da lista: 6.736996
+Liberando a memória do vetor
+Memória do vetor liberada
+Tempo para liberação do vetor: 0.000402
+=====================================
+RESULTADOS FINAIS
+======================================
+Tempos de criação da lista:
+Tempo de criação da lista numero 0: 6.061225 
+Tempo de criação da lista numero 1: 5.430396 
+Tempo de criação da lista numero 2: 5.425688 
+Tempo de criação da lista numero 3: 5.479343 
+Tempo de criação da lista numero 4: 5.656051 
+Média: 5.610541
+Desvio Padrão: 0.268804
+--------------------------------
+Tempos de criação do vetor:
+Tempo de criação do vetor numero 0: 0.000320 
+Tempo de criação do vetor numero 1: 0.000282 
+Tempo de criação do vetor numero 2: 0.000096 
+Tempo de criação do vetor numero 3: 0.000100 
+Tempo de criação do vetor numero 4: 0.000101 
+Média: 0.000180
+Desvio Padrão: 0.000111
+--------------------------------
+Tempos de busca na lista:
+Tempo de busca na lista numero 0: 0.000133 
+Tempo de busca na lista numero 1: 0.000040 
+Tempo de busca na lista numero 2: 0.000131 
+Tempo de busca na lista numero 3: 0.000047 
+Tempo de busca na lista numero 4: 0.000113 
+Média: 0.000093
+Desvio Padrão: 0.000046
+--------------------------------
+Tempos de busca no vetor:
+Tempo de busca no vetor numero 0: 0.000008 
+Tempo de busca no vetor numero 1: 0.000048 
+Tempo de busca no vetor numero 2: 0.000001 
+Tempo de busca no vetor numero 3: 0.000047 
+Tempo de busca no vetor numero 4: 0.000021 
+Média: 0.000025
+Desvio Padrão: 0.000022
+--------------------------------
+Tempos de liberação da lista:
+Tempo de liberação da lista numero 0: 6.552938 
+Tempo de liberação da lista numero 1: 6.482636 
+Tempo de liberação da lista numero 2: 6.479567 
+Tempo de liberação da lista numero 3: 6.750802 
+Tempo de liberação da lista numero 4: 6.736996 
+Média: 6.600588
+Desvio Padrão: 0.134165
+--------------------------------
+Tempos de liberação do vetor:
+Tempo de liberação do vetor numero 0: 0.000137 
+Tempo de liberação do vetor numero 1: 0.000473 
+Tempo de liberação do vetor numero 2: 0.000413 
+Tempo de liberação do vetor numero 3: 0.000404 
+Tempo de liberação do vetor numero 4: 0.000402 
+Média: 0.000366
+Desvio Padrão: 0.000131
+
+
+
+
+ANÁLISE: 
+
+Algoritmos usados para comparação: 
+--tempo de criação e de busca dados os mesmos números: resultados demonstram que a lista encadeada necessita de muito mais tempo que um vetor, devido provavelmente à necessidade de chamar as mesmas funções várias vezes para popular o vetor, enquanto que o vetor só precisa chamar uma.
+
+--tempo de busca sequencial em cada tipo de dado: diferença muito menor de tempo quando comparada às outras, porém o vetor é consistentemente mais veloz e apresenta menor desvio padrão, provavelmente porque na lista é necessário ficar utilizando os ponteiros para ir para o próximo valor
+
+--tempo para liberação da ram utilizada pelo vetor e pela lista: novamente a lista apresenta tempos muito piores devido à necessidade constante de precisar chamar funções, enquanto que o vetor chama muito poucas vezes.
+
+Resumo: vetores são muito mais rápidos do que listas encadeadas, porém, diferentemente do vetor, você não precisa saber a quantidade de valores que serão armazenados antes de formar a lista.

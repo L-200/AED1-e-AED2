@@ -44,23 +44,6 @@ void append_values_reverse_l(Int_Linked_List* l, int n, long values[]) {
     }
 }
 
-void randomize_values_l(Int_Linked_List* l, int seed, int size) {
-    int j;
-    srand(seed);
-    for(j = 0; j < size; j++) {
-        append_l(l, (rand() % size / 2) + 1);
-    }
-
-}
-
-void randomize_values_asc_l(Int_Linked_List* l, int seed, int size) {
-    int a = 1, j;
-    srand(seed);
-    for(j = 0; j < size; j++) {
-        a = a + (rand() % size / 2) + 1;
-        append_l(l, a);
-    }
-}
 
 int get_l(Int_Linked_List* l, int i) {
     Node* n;
@@ -88,20 +71,6 @@ int get_size_l(Int_Linked_List* l) {
     return i;
 }
 
-void set_l(Int_Linked_List* l, int i, int value) {
-    Node* n;
-
-    for(n = l->prim; n != NULL; n = n->prox) {
-        if(i == 0) {
-            n->value = value;
-            return;
-        }
-        i--;
-    }
-
-    error(EXIT_FAILURE, 0, "Index fora dos limites");
-}
-
 int pop_l(Int_Linked_List* l) {
     Node* n = l->prim;
     int value;
@@ -126,6 +95,46 @@ int pop_l(Int_Linked_List* l) {
 
     return value;
 }
+
+void destroy_l(Int_Linked_List* l) {
+    while(l->prim != NULL) {
+        pop_l(l);
+    }
+    free(l);
+}
+
+void randomize_values_l(Int_Linked_List* l, int seed, int size) {
+    int j;
+    srand(seed);
+    for(j = 0; j < size; j++) {
+        append_l(l, (rand() % size / 2) + 1);
+    }
+
+}
+
+void randomize_values_asc_l(Int_Linked_List* l, int seed, int size) {
+    int a = 1, j;
+    srand(seed);
+    for(j = 0; j < size; j++) {
+        a = a + (rand() % size / 2) + 1;
+        append_l(l, a);
+    }
+}
+
+void set_l(Int_Linked_List* l, int i, int value) {
+    Node* n;
+
+    for(n = l->prim; n != NULL; n = n->prox) {
+        if(i == 0) {
+            n->value = value;
+            return;
+        }
+        i--;
+    }
+
+    error(EXIT_FAILURE, 0, "Index fora dos limites");
+}
+
 
 int search_sequencial_l(Int_Linked_List* l, int value) {
     Node* n;
