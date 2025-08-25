@@ -2,6 +2,7 @@
     "files.associations": {
         "main.h": "c",
         "dados_estatisticos.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "main_arvores.h": "c"
     }
 }
