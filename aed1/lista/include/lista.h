@@ -20,7 +20,7 @@ void append_l(Int_Linked_List* l, int value);
 void append_values_l(Int_Linked_List* l, int n, int values[]);
 
 /*Adiciona elementos na ordem inversa do vetor dado*/
-void append_values_reverse_l(Int_Linked_List* l, int n, long values[]);
+void append_values_reverse_l(Int_Linked_List* l, int n, int values[]);
 
 /* Método get elemento da lista encadeada */
 int get_l(Int_Linked_List* l, int i);

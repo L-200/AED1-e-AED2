@@ -7,7 +7,7 @@
 Vector* initialize_v(int tamanho) {
     Vector* vet = (Vector*) malloc(sizeof(Vector));
     vet->tam = tamanho;
-    vet->v = malloc(sizeof(long)*tamanho);
+    vet->v = malloc(sizeof(int)*tamanho);
     return vet;
 }
 
@@ -32,7 +32,7 @@ int get_v(Vector* vet, int i) {
     return vet->v[i];
 }
 
-void set_v(Vector* vet, int i, long value) {
+void set_v(Vector* vet, int i, int value) {
     if(i> vet->tam) {
         error(EXIT_FAILURE, 0, "Index fora dos limites");
     }
@@ -54,7 +54,7 @@ void randomize_values_v(Vector* v, int seed, int size) {
 }
 
 void randomize_values_asc_v(Vector* v, int seed, int size) {
-    long a = 1, j;
+    int a = 1, j;
     srand(seed);
     for(j = 0; j < size; j++) {
         a = a + (rand() % 10) + 1;
@@ -64,19 +64,19 @@ void randomize_values_asc_v(Vector* v, int seed, int size) {
 
 void show_portion_v(Vector *v, int inicio, int fim) {
     for (int i = inicio; i < fim-1; i++) {
-        printf("%ld | ", v->v[i]);
+        printf("%d | ", v->v[i]);
     }
-    printf("%ld", v->v[fim-1]);
+    printf("%d", v->v[fim-1]);
     printf("\n");
 }
 
-void swap_v(long* a, long* b) {
-    long t = *a;
+void swap_v(int* a, int* b) {
+    int t = *a;
     *a = *b;
     *b = t;
 }
 
-int search_sequencial_v(Vector* vet, long value) {
+int search_sequencial_v(Vector* vet, int value) {
     int i;
     for(i=0 ; i < vet->tam; i++) {
         if(vet->v[i] == value) {
@@ -86,7 +86,7 @@ int search_sequencial_v(Vector* vet, long value) {
     return 0;
 }
 
-int search_binario_v(Vector* vet, long value) {
+int search_binario_v(Vector* vet, int value) {
     int inicio = 0;
     int fim = vet->tam - 1;
     while(inicio <= fim) {
@@ -109,7 +109,7 @@ void bubble_sort_v(Vector* vet) {
         return;
     }
     int i, j;
-    long aux;
+    int aux;
     for(i = 0; i < vet->tam - 1; i++) {
         for(j = 0; j < vet->tam - 1 - i; j++) {
             if(vet->v[j] > vet->v[j+1]) {

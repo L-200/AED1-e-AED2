@@ -194,4 +194,4 @@ Algoritmos usados para comparação:
 
 --tempo para liberação da ram utilizada pelo vetor e pela lista: novamente a lista apresenta tempos muito piores devido à necessidade constante de precisar chamar funções, enquanto que o vetor chama muito poucas vezes.
 
-Resumo: vetores são muito mais rápidos do que listas encadeadas, porém, diferentemente do vetor, você não precisa saber a quantidade de valores que serão armazenados antes de formar a lista.
+Resumo: vetores são muito mais rápidos do que listas encadeadas, porém, diferentemente do vetor, você não precisa saber a quantidade de valores que serão armazenados antes de formar a lista. Apesar disso, cada nodulo de uma lista pode guardar várias informaações, enquanto que um vetor sempre irá guardar apenas uma. Ex: se você quiser guardar as matrículas e os nomes de cada aluno de uma escola a lista conseguiria fazer isso, já o vetor não.
