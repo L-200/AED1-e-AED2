@@ -16,6 +16,10 @@ BTree* append_btree_no_repeat(BTree **t, int v);
 
 int* append_random_values_btree(BTree **t, int tam);
 
+void append_from_vector_btree(BTree **t, int v[], int tam);
+
+void _append_from_vector_btree(BTree **t, int v[], int i, int j);
+
 BTree* search_first_btree(BTree *t, int v);
 
 void walk_tree_pre_order_btree(BTree *t, void (*func)(int v));

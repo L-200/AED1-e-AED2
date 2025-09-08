@@ -4,6 +4,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 #include "avltree.h"
 #include "btree.h"
 #include "dados_estatisticos.h"

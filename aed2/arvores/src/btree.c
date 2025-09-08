@@ -47,7 +47,9 @@ BTree* append_btree_no_repeat(BTree **t, int v) {
     }
 }
 
-#define print_vec(v, n) for(int ppp = 0; ppp < n; ppp++) printf("%d ", v[ppp])
+void append_from_vector_btree(BTree **t, int v[], int tam) {
+    _append_from_vector_btree(t, v, 0, tam - 1);
+}
 
 void _append_from_vector_btree(BTree **t, int v[], int i, int j) {
     if (i <= j) {
