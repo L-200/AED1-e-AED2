@@ -51,3 +51,20 @@ void libera_dados_estatisticos_e(dados_estatisticos* dados) {
         free(dados);
     }
 }
+
+void print_dados_estatisticos_e(dados_estatisticos* dados) {
+    if (dados->tamanho == 0) {
+        printf("Nenhum dado disponível para estatísticas.\n");
+        return;
+    }
+
+    for (int i = 0; i < dados->tamanho; i++) {
+        printf("%lf\n", dados->valores[i]);
+    }
+
+    double media = calcula_media_e(dados);
+    double desvio_padrao = calcula_desvio_padrao_e(dados);
+
+    printf("Média: %.6f\n", media);
+    printf("Desvio Padrão: %.6f\n", desvio_padrao);
+}

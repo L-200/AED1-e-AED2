@@ -13,6 +13,7 @@ char is_empty_btree(BTree *t) {
 }
 
 BTree* append_btree(BTree **t, int v) {
+    
     if(*t == NULL) {
         *t = malloc(sizeof(BTree));
         (*t)->v = v;
@@ -48,45 +49,21 @@ BTree* append_btree_no_repeat(BTree **t, int v) {
 }
 
 void append_from_vector_btree(BTree **t, int v[], int tam) {
-    _append_from_vector_btree(t, v, 0, tam - 1);
-}
-
-void _append_from_vector_btree(BTree **t, int v[], int i, int j) {
-    if (i <= j) {
-        int m = i + (j - i) / 2;
-        
-        append_btree(t, v[m]);
-
-        _append_from_vector_btree(t, v, i, m - 1);
-        _append_from_vector_btree(t, v, m + 1, j);
+    for (int i = 0; i < tam; i++) {
+        append_btree(t, v[i]);
     }
 }
 
-int* append_random_values_btree(BTree **t, int tam) {
-    clock_t clocker = clock();
-
-    int i, init;
-    int * v = malloc(sizeof(int) * tam);
-
-    srand(clocker);
-    init = rand() % 100;
-    v[0] = init;
-
-    for(i = 1; i < tam; i++) {
-        v[i] = v[i-1] + rand() % 100;
+int search_btree(BTree *t, int v) {
+    if(t == NULL)
+        return 0;
+    if(t->v == v) {
+        return 1;
     }
-
-    _append_from_vector_btree(t, v, 0, tam - 1);
-    return v;
-}
-
-BTree* search_first_btree(BTree *t, int v) {
-    if(t == NULL || t->v == v)
-        return t;
     if(v < t->v) {
-        return search_first_btree(t->l, v);
+        return search_btree(t->l, v);
     } else {
-        return search_first_btree(t->r, v);
+        return search_btree(t->r, v);
     }
 }
 
@@ -206,8 +183,7 @@ void clear_btree(BTree **t) {
     if(*t != NULL) {
         clear_btree(&((*t)->l));
         clear_btree(&((*t)->r));
-    } else {
         free(*t);
-    }
+    } 
     *t = NULL;
 }

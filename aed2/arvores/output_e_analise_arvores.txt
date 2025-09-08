@@ -1,0 +1,228 @@
+Exemplo de output do programa:
+
+Iniciado teste numero 1
+Gerando vetor de tamanho 10000000
+
+--------------------------------
+Criando BTree com 10000000 elementos
+Tempo de criacao da BTree: 9.329586 segundos
+--------------------------------
+Altura da BTree: 65
+--------------------------------
+Procurando o valor 9719651
+Valor encontrado na BTree!
+Tempo de busca na BTree: 0.000004 segundos
+--------------------------------
+Tempo de liberação da BTree: 0.806327 segundos
+================================
+
+Criando AVL com 10000000 elementos
+Tempo de criacao da AVL: 16.614971 segundos
+--------------------------------
+Altura da AVL: 28
+--------------------------------
+Procurando o valor 9719651
+Valor encontrado na AVLTree!
+Tempo de busca na AVL: 0.000005 segundos
+--------------------------------
+Tempo de liberação da AVL: 0.715842 segundos
+================================
+
+Iniciado teste numero 2
+Gerando vetor de tamanho 10000000
+
+--------------------------------
+Criando BTree com 10000000 elementos
+Tempo de criacao da BTree: 9.114393 segundos
+--------------------------------
+Altura da BTree: 56
+--------------------------------
+Procurando o valor 6591957
+Valor encontrado na BTree!
+Tempo de busca na BTree: 0.000004 segundos
+--------------------------------
+Tempo de liberação da BTree: 0.807167 segundos
+================================
+
+Criando AVL com 10000000 elementos
+Tempo de criacao da AVL: 16.170547 segundos
+--------------------------------
+Altura da AVL: 28
+--------------------------------
+Procurando o valor 6591957
+Valor encontrado na AVLTree!
+Tempo de busca na AVL: 0.000003 segundos
+--------------------------------
+Tempo de liberação da AVL: 0.725094 segundos
+================================
+
+Iniciado teste numero 3
+Gerando vetor de tamanho 10000000
+
+--------------------------------
+Criando BTree com 10000000 elementos
+Tempo de criacao da BTree: 9.128758 segundos
+--------------------------------
+Altura da BTree: 60
+--------------------------------
+Procurando o valor 5269226
+Valor encontrado na BTree!
+Tempo de busca na BTree: 0.000004 segundos
+--------------------------------
+Tempo de liberação da BTree: 0.812602 segundos
+================================
+
+Criando AVL com 10000000 elementos
+Tempo de criacao da AVL: 16.096069 segundos
+--------------------------------
+Altura da AVL: 28
+--------------------------------
+Procurando o valor 5269226
+Valor encontrado na AVLTree!
+Tempo de busca na AVL: 0.000004 segundos
+--------------------------------
+Tempo de liberação da AVL: 0.726716 segundos
+================================
+
+Iniciado teste numero 4
+Gerando vetor de tamanho 10000000
+
+--------------------------------
+Criando BTree com 10000000 elementos
+Tempo de criacao da BTree: 8.969359 segundos
+--------------------------------
+Altura da BTree: 60
+--------------------------------
+Procurando o valor 9930912
+Valor encontrado na BTree!
+Tempo de busca na BTree: 0.000004 segundos
+--------------------------------
+Tempo de liberação da BTree: 0.823684 segundos
+================================
+
+Criando AVL com 10000000 elementos
+Tempo de criacao da AVL: 16.105460 segundos
+--------------------------------
+Altura da AVL: 28
+--------------------------------
+Procurando o valor 9930912
+Valor encontrado na AVLTree!
+Tempo de busca na AVL: 0.000004 segundos
+--------------------------------
+Tempo de liberação da AVL: 0.748561 segundos
+================================
+
+Iniciado teste numero 5
+Gerando vetor de tamanho 10000000
+
+--------------------------------
+Criando BTree com 10000000 elementos
+Tempo de criacao da BTree: 8.933795 segundos
+--------------------------------
+Altura da BTree: 57
+--------------------------------
+Procurando o valor 8310726
+Valor encontrado na BTree!
+Tempo de busca na BTree: 0.000003 segundos
+--------------------------------
+Tempo de liberação da BTree: 0.813255 segundos
+================================
+
+Criando AVL com 10000000 elementos
+Tempo de criacao da AVL: 16.418588 segundos
+--------------------------------
+Altura da AVL: 28
+--------------------------------
+Procurando o valor 8310726
+Valor encontrado na AVLTree!
+Tempo de busca na AVL: 0.000004 segundos
+--------------------------------
+Tempo de liberação da AVL: 0.716309 segundos
+================================
+
+RESULTADOS
+===============================
+Resultados dos testes com BTree:
+Tempos de criação das árvores binárias:
+9.329586
+9.114393
+9.128758
+8.969359
+8.933795
+Média: 9.095178
+Desvio Padrão: 0.156779
+
+Altura das árvores binárias:
+65.000000
+56.000000
+60.000000
+60.000000
+57.000000
+Média: 59.600000
+Desvio Padrão: 3.507136
+
+Tempos de busca nas árvores binárias:
+0.000004
+0.000004
+0.000004
+0.000004
+0.000003
+Média: 0.000004
+Desvio Padrão: 0.000000
+
+Tempos de liberação das árvores binárias:
+0.806327
+0.807167
+0.812602
+0.823684
+0.813255
+Média: 0.812607
+Desvio Padrão: 0.006931
+--------------------------------
+Resultados dos testes com AVLTree:
+Tempos de criação das árvores AVL:
+16.614971
+16.170547
+16.096069
+16.105460
+16.418588
+Média: 16.281127
+Desvio Padrão: 0.227860
+
+Altura das árvores AVL:
+28.000000
+28.000000
+28.000000
+28.000000
+28.000000
+Média: 28.000000
+Desvio Padrão: 0.000000
+
+Tempos de busca nas árvores AVL:
+0.000005
+0.000003
+0.000004
+0.000004
+0.000004
+Média: 0.000004
+Desvio Padrão: 0.000001
+
+Tempos de liberação das árvores:
+0.715842
+0.725094
+0.726716
+0.748561
+0.716309
+Média: 0.726504
+Desvio Padrão: 0.013287
+--------------------------------
+
+ANÁLISE:
+
+Algoritmos usados para a comparação:
+
+--tempo de criação: a diferença de média de mais de 6 segundos se deve ao balanceamento necessário em na formação de uma árvore avl.
+
+--tempo de busca: diferença pequena porém seria maior caso os testes fossem realizados com árvores de muito mais elementos. O balanceamento das árvores avl em suas formações garante pesquisas ainda mais rápidas devido à altura menor.
+
+--Tempo de liberação: diferença de tempo provavelmente ocorrendo devido a cache miss, já que a avl ser mais compacta deve causar uma chance maior de o próximo nó já estar no cache da CPU

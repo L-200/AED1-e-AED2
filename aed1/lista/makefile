@@ -1,4 +1,4 @@
-TARGET = main_vetor
+TARGET = main_lista
 INCLUDE_DIR = include
 SRC_DIR = src
 SRC = $(wildcard $(SRC_DIR)/*.c)

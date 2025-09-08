@@ -12,7 +12,7 @@ char is_empty_avltree(AVLTree *t);
 
 AVLTree* append_avltree(AVLTree **t, int v);
 
-void append_random_values_avltree(AVLTree **t, int tam);
+void append_from_vector_avltree(AVLTree **t, int v[], int tam);
 
 int height (AVLTree* t);
 
@@ -24,7 +24,7 @@ AVLTree* rotate_left_avltree (AVLTree* t);
 
 AVLTree* rotate_right_avltree (AVLTree* t);
 
-AVLTree* search_first_avltree(AVLTree *t, int v);
+int search_avltree(AVLTree *t, int v);
 
 void walk_tree_pre_order_avltree(AVLTree *t, void (*func)(int v));
 
