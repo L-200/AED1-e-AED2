@@ -225,4 +225,4 @@ Algoritmos usados para a comparação:
 
 --tempo de busca: diferença pequena porém seria maior caso os testes fossem realizados com árvores de muito mais elementos. O balanceamento das árvores avl em suas formações garante pesquisas ainda mais rápidas devido à altura menor.
 
---Tempo de liberação: diferença de tempo provavelmente ocorrendo devido a cache miss, já que a avl ser mais compacta deve causar uma chance maior de o próximo nó já estar no cache da CPU
+--Tempo de liberação: diferença de tempo provavelmente ocorrendo devido a cache miss, já que a avl ser mais compacta deve causar uma chance maior de o próximo nó já estar no cache da CPU.
